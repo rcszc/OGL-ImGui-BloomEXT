@@ -47,12 +47,16 @@ struct FxFilterParams {
 	std::array<float, 4> ColorMaxFilter = { 1.0f, 1.0f, 1.0f, 1.0f };
 	std::array<float, 4> ColorMinFilter = { 0.0f, 0.0f, 0.0f, 0.0f };
 };
+```
 
+```cpp
 // 设置辉光处理中的模糊半径[0,30].
 MyGuiBloom->SettingBloomRadius(12);
+```
 
+```cpp
 // 获取混合参数指针进行设置.
-BloomImGui::FxOutParams* = MyGuiBloom->SettingBlendParams();
+BloomImGui::FxOutParams* SetBlend = MyGuiBloom->SettingBlendParams();
 
 struct FxOutParams {
     // 模糊片段与原场景片段的混合权重.
