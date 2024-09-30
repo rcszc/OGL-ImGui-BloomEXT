@@ -5,6 +5,6 @@ imgui for opengl, bloom_fx extension.
 
 [文档这边请~](ImBloomDoc.md)
 
-> __LoC:__ 655 __ARCH:__ v1.0
+> __VERSION:__ v1.1 (20241001)
 
 <img src="BloomArch.png"/>
