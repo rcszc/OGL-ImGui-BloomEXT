@@ -9,7 +9,6 @@
 #include <GL/GL.h>
 
 #include "imgui.h"
-#include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
 #include <iostream>
@@ -67,6 +66,7 @@ namespace BloomImGui {
 	class FxBloomSystem :public __ShaderCompileSystem {
 	private:
 		std::function<void(const std::string&)> ERR_INFO_FUNC = {};
+        std::function<void(void)> IMGUI_API_NEWFRAME_FUNC = {};
 	protected:
 		OGL_INDEX_SHADER  FxProcessShaders[4]      = {};
 		OGL_INDEX_FRAME   FxProcessFrameBuffers[4] = {};
@@ -99,6 +99,9 @@ namespace BloomImGui {
 		FxBloomSystem(GLuint win_x, GLuint win_y, std::function<void(const std::string&)> errinfo = PRESET_ERR_PRINT);
 		~FxBloomSystem();
 
+        void GetImGuiNewFrameFUNC(const std::function<void(void)>& function) {
+            IMGUI_API_NEWFRAME_FUNC = function;
+        }
 		FxFilterParams* SettingFilterParams() { return &FXP_BloomSceneFilter; }
 		FxOutParams*    SettingBlendParams()  { return &FXP_BloomSceneOut; }
 

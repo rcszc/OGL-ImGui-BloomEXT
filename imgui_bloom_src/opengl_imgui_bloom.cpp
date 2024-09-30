@@ -306,7 +306,7 @@ namespace BloomImGui {
 	void FxBloomSystem::RenderContextCaptureBegin() {
 		// start imgui new_frame.
 		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
+        IMGUI_API_NEWFRAME_FUNC();
 		ImGui::NewFrame();
 	}
 
