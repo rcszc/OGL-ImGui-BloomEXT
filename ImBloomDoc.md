@@ -1,6 +1,6 @@
 # ImGui For OpenGL - BloomFX
 
-- __Version:__ `20240921` __ByRCSZ.__
+- __Version:__ `1.1` `20241001` __ByRCSZ.__
 - __Libraries:__ `opengl32` `glew32` `imgui` 
 
 ### 执行后期Bloom渲染
