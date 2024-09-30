@@ -18,8 +18,10 @@ BloomImGui::FxBloomSystem* MyGuiBloom = nullptr;
 // 第二个为可选参数: std::function<void(const std::string&)> (如果需要自定义日志输出)
 MyGuiBloom = new BloomImGui::FxBloomSystem(1680, 896);
 
+// v1.1
+
 // ...
-// 进入渲染上下文后我们, 只需要极其简单的调用封装好的上下文.
+// 进入渲染上下文(循环)后我们, 只需要极其简单的调用封装好的上下文.
 
 MyGuiBloom->RenderContextCaptureBegin();
 
@@ -27,6 +29,21 @@ MyGuiBloom->RenderContextCaptureBegin();
 
 MyGuiBloom->RenderContextCaptureEnd();
 
+```
+> 1.1
+
+如果你使用的是 Win32 窗口需要注意, 裁剪尺寸不能去计算客户区尺寸, 渲染裁剪后两个参数需要和窗口创建时尺寸参数相同, CreateWindowW -> glViewport. 所以还是强烈推荐 GLFW + OPENGL3 的组合.
+
+```cpp
+// 现在我们在初始化时还需要加一项必要配置:
+// 配置 ImGui API 的 "NewFrame" 函数.
+
+// GLFW 使用: ImGui_ImplGlfw_NewFrame
+// Win32 使用: ImGui_ImplWin32_NewFrame
+
+// 并且需要手动包含 imgui_impl_xxx.h
+
+MyGuiBloom->GetImGuiNewFrameFUNC(ImGui_ImplGlfw_NewFrame);
 ```
 
 ### 设置后期渲染参数
