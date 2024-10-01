@@ -7,4 +7,4 @@ imgui for opengl, bloom_fx extension.
 
 > __VERSION:__ v1.1 (20241001)
 
-<img src="BloomArch.png"/>
+<img src="BloomArchII.png"/>
