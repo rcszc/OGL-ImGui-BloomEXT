@@ -99,6 +99,7 @@ namespace BloomImGui {
 		FxBloomSystem(GLuint win_x, GLuint win_y, std::function<void(const std::string&)> errinfo = PRESET_ERR_PRINT);
 		~FxBloomSystem();
 
+		// window api mapping function.
         void GetImGuiNewFrameFUNC(const std::function<void(void)>& function) {
             IMGUI_API_NEWFRAME_FUNC = function;
         }
