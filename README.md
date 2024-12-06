@@ -5,6 +5,8 @@ imgui for opengl, bloom_fx extension.
 
 [文档这边请~](ImBloomDoc.md)
 
-> __VERSION:__ v1.1 (20241001)
+> __VERSION:__ v1.1 (20241206)
+
+> __UPDATE:__ 修复纹理循环重复的BUG
 
 <img src="BloomArchII.png"/>
